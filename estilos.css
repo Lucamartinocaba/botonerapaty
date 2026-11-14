@@ -1,0 +1,98 @@
+body {
+  /* Capa oscura + ruta de tu imagen */
+ background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('../imagen/images.png');
+  
+  /* Ajustes para que cubra toda la pantalla sin deformarse */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* El resto de tus estilos actuales se mantienen igual */
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* Cuadrícula adaptable para los botones */
+.soundboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 50px;
+  width: 90%;
+  max-width: 600px;
+}
+
+/* Estilo tipo "Pad" musical */
+.pad-btn {
+  background: linear-gradient(145deg, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 30px 15px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #1d4ed8, 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s, box-shadow 0.1s;
+  user-select: none;
+}
+
+/* Efecto al hacer clic */
+.pad-btn:active, .pad-btn.sonando {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #1d4ed8, 0 2px 5px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(145deg, #60a5fa, #3b82f6);
+}
+
+/* Colores variados opcionales */
+.btn-gnr { 
+  background: linear-gradient(145deg, #919191, #059669); 
+  box-shadow: 0 6px 0 #919191; 
+  color: black;
+}
+/* Botón de detener todo */
+.btn-stop {
+  margin-top: 30px;
+  background-color: #334155;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-stop:hover {
+  background-color: #475569;
+  color: white;
+}
+/* Contenedor de la barra de volumen */
+.control-volumen {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  background-color: #1e293b;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+
+/* Estilo del deslizador */
+#volumen {
+  cursor: pointer;
+  accent-color: #3b82f6; /* Cambia el color de la bolita y la barra */
+  width: 160px;
+}
